@@ -7,6 +7,9 @@ module Gem2Rpm
     # A long description of gem wrapped to 78 characters.
     def description
       d = super.to_s.chomp
+      if d.nil? or d.empty?
+        d=self.__getobj__().summary
+      end
       d.gsub!(/([^.])\Z/, "\\1.")
       Helpers::word_wrap(d, 78) + "\n"
     end
@@ -15,6 +18,17 @@ module Gem2Rpm
     # runtime or development dependency).
     def dependencies
       super.map {|d| Gem2Rpm::Dependency.new d}
+    end
+
+    # a short summary trimmed to 70 characters
+    def summary
+      text = super
+      if text.length >= 70
+         text = text[0,70].split(/\s/)
+         text = text[0, text.length-1].join(" ")
+      end
+      text = text[0, text.length-1] if text[-1] == '.'
+      text
     end
 
     # List of dependencies that are used for development.
