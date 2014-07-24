@@ -53,7 +53,7 @@ spec = Gem::Specification.new do |s|
 
   #### Documentation and testing.
 
-  s.extra_rdoc_files = ['AUTHORS', 'README', 'LICENSE']
+  s.extra_rdoc_files = ['AUTHORS', 'README', 'LICENSE', 'gem2rpm.yml.documentation']
 
   #### Author and project details.
 
