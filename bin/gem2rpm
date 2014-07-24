@@ -68,6 +68,16 @@ rest = opts.permute(ARGV)
 
 template = nil
 if template_file.nil?
+  f = open("/etc/os-release", "r") if File.exists?("/etc/os-release")
+  if f
+    f.read.split('\n').each do |line|
+      line.match(%r{^ID=(.*)$}) { |m| template_file=m[1] }
+    end
+    f.close
+    f = nil
+  end
+end
+if template_file.nil?
   template = Gem2Rpm::TEMPLATE
 else
   begin
