@@ -145,12 +145,21 @@ if config_file
 end
 
 # Produce a specfile
+oldlicense = nil
 if output_file.nil?
-    Gem2Rpm::convert(gemfile, template, $stdout, nongem, local, doc_subpackage, config) unless deps
+    Gem2Rpm::convert(gemfile, template, $stdout, nongem, local, doc_subpackage, oldlicense, config) unless deps
 else
     begin
+        if File.exists?(output_file)
+          File.open(output_file, 'r') do |oldfile|
+            oldfile.each_line do |line|
+              m = line.match(%r{^License:\s*(\w.*)$})
+              oldlicense = m[1] if m
+            end
+          end
+        end
         out = open(output_file, "w")
-        Gem2Rpm::convert(gemfile, template, out, nongem, local, doc_subpackage, config)
+        Gem2Rpm::convert(gemfile, template, out, nongem, local, doc_subpackage, oldlicense, config)
     ensure
         out.close()
     end
