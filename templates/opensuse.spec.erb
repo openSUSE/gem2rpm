@@ -15,6 +15,8 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 <% if config && not(config.empty?) -%>
+
+
 #
 # This file was generated with a gem2rpm.yml and not just plain gem2rpm.
 # All sections marked as MANUAL, license headers, summaries and descriptions
@@ -74,7 +76,7 @@ Url:            <%= spec.homepage %>
 Source:         http://rubygems.org/gems/%{mod_full_name}.gem
 <% if config[:sources]
      config[:sources].each_with_index do |src, i| -%>
-Source<%= i+1 %>:       <%= src %>
+Source<%= i+1 %>:        <%= src %>
 <% end
  end -%>
 <% if config[:patches] -%>

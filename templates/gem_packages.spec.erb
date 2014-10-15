@@ -173,9 +173,9 @@ fi
 <% end -%>
 <% spec.executables.each do |executable| -%>
 <%= rb_bindir %>/<%= "#{executable}#{rb_suffix}-#{spec.version}" %>
-%ghost <%= rb_bindir %>/<%= "#{executable}#{rb_suffix}" %>
-%ghost <%= rb_bindir %>/<%= "#{executable}-#{spec.version}" %>
-%ghost <%= rb_bindir %>/<%= executable %>
+<%= rb_bindir %>/<%= "#{executable}#{rb_suffix}" %>
+<%= rb_bindir %>/<%= "#{executable}-#{spec.version}" %>
+<%= rb_bindir %>/<%= executable %>
 %ghost <%= rb_sysconfdir %>/alternatives/<%= executable %>
 %ghost <%= rb_sysconfdir %>/alternatives/<%= "#{executable}#{rb_suffix}" %>
 %ghost <%= rb_sysconfdir %>/alternatives/<%= "#{executable}-#{spec.version}" %>
