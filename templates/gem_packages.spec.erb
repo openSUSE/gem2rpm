@@ -77,11 +77,6 @@
   #/ruby2.1
 %>
 %package -n <%= pkg_basename %><%= config[:version_suffix] %>
-<% for req in spec.required_ruby_version -%>
-<%   unless req.empty? -%>
-Requires:       <%= rb_pkgname %> <%= req %>
-<%   end -%>
-<% end -%>
 # MANUAL
 <% if config[:main] && config[:main][:preamble] -%>
 <%= config[:main][:preamble] %>
