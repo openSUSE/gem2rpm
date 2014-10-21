@@ -96,7 +96,7 @@ PreReq:         update-alternatives
 %description -n <%= pkg_basename %><%= config[:version_suffix] %>
 <%= config[:description] or spec.description -%>
 
-<% if spec.has_rdoc && not(config[:disable_docs]) -%>
+<% if spec.has_rdoc && !(config[:disable_docs]) -%>
 %package -n <%= pkg_basename %>-doc<%= config[:version_suffix] %>
 Summary:        RDoc documentation for <%= spec.name %>
 Group:          Development/Languages/Ruby
@@ -191,7 +191,7 @@ fi
 <% end -%>
 <%= gem_spec_dir %>/<%= mod_full_name -%>.gemspec
 
-<% if spec.has_rdoc && not(config[:disable_docs]) -%>
+<% if spec.has_rdoc && !(config[:disable_docs]) -%>
 %files -n <%= pkg_basename %>-doc<%= config[:version_suffix] %>
 %defattr(-,root,root,-)
 %doc <%= gem_doc_dir %>
