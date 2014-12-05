@@ -54,7 +54,7 @@
 #   :filelist: |-
 #     /usr/bin/gem2rpm-opensuse
 # ## used by gem_packages
-# :custom:
+# :custom_pkgs:
 #   apache:
 #     :preamble: |-
 #       Requires: .....

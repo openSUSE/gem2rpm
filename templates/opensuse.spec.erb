@@ -209,6 +209,17 @@ This package holds the <%= custom_pkg_name %> sub package for <%= spec.name -%>
 %defattr(-,root,root,-)
 <%= data[:filelist] %>
 
+<% if data[:scripts]
+      if data[:scripts].is_a? Hash
+        data[:scripts].each do |section, content| -%>
+%<%=section %> <%=custom_pkg_name %>
+<%= content %>
+
+<%      end
+      end
+   end
+-%>
+
 <%   end
    end
 -%>
