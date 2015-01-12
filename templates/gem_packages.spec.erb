@@ -120,7 +120,7 @@ Usually in RDoc and RI formats.
      %w(test spec).each { |framework|
        test_frameworks[framework] = 1 if path.index(framework + "/") == 0
      }
-     %w(changes copying history legal license mit-license changelog readme).each { |file|
+     %w(changes copying history legal license license-mit mit-license changelog readme).each { |file|
       bpath = path.downcase.gsub(%r{\.rdoc$}, '').gsub(%r{\.txt$}, '').gsub(%r{\.md$}, '')
       #$stderr.puts "PATH #{path} #{bpath} #{file}"
       docdirfiles << path if bpath == file
