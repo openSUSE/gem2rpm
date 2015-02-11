@@ -133,7 +133,7 @@ Usually in RDoc and RI formats.
         release_notes
         readme
        ).each { |file|
-      bpath = path.downcase.gsub(%r{\.rdoc$}, '').gsub(%r{\.txt$}, '').gsub(%r{\.md$}, '')
+      bpath = path.downcase.gsub(%r{\.rdoc$}, '').gsub(%r{\.txt$}, '').gsub(%r{\.md$}, '').gsub(%r{\.markdown$}, '')
       #$stderr.puts "PATH #{path} #{bpath} #{file}"
       docdirfiles << path if bpath == file
      }
