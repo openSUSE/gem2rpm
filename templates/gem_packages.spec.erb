@@ -14,7 +14,7 @@
   end
 
   def self.get_extension_doc_dir(gem_spec)
-    return nil unless Gem.ruby_engine == 'ruby' && Gem::Requirement.new("~> 2.1.0").satisfied_by? Gem.ruby_version
+    return nil unless Gem.ruby_engine == 'ruby' && Gem::Requirement.new("~> 2.1.0").satisfied_by?(Gem.ruby_version)
     if gem_spec.respond_to?(:extensions_dir)
       rp = gem_spec.extensions_dir.rpartition(gem_spec.base_dir)
       return File.join(rp[1], 'doc', rp[2]) 
