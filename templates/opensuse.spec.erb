@@ -137,6 +137,7 @@ PreReq:         update-alternatives
 <% config[:patches].each_with_index do |patch, i| -%>
 %patch<%= i %> <%= patch[1] if patch[1] %>
 <% end -%>
+find -type f -print0 | xargs -0 touch -r %{S:0}
 %gem_build
 <% end -%>
 
