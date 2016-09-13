@@ -73,7 +73,11 @@ BuildRequires:  update-alternatives
 <% unless spec.homepage.nil? || spec.homepage.empty? -%>
 Url:            <%= spec.homepage %>
 <% end -%>
+<% if config[:sourceurl] -%>
+Source:         <%= config[:sourceurl] %>
+<% else -%>
 Source:         http://rubygems.org/gems/%{mod_full_name}.gem
+<% end -%>
 <% if config[:sources]
      config[:sources].each_with_index do |src, i| -%>
 Source<%= i+1 %>:        <%= src %>
