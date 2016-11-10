@@ -22,6 +22,8 @@
 # :patches:
 #   foo.patch: -p1
 #   bar.patch:
+# :post_patch:
+#   if you need to fiddle with the source dir before rebuilding the gem
 # ## used by gem2rpm
 # :sources:
 # - foo.desktop
