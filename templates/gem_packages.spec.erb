@@ -31,7 +31,8 @@
   end
 
   def self.map_executable(config, executable)
-    if not(config[:binary_map].nil? and config[:binary_map][executable].nil?)
+    if not(config[:binary_map].nil? or
+           config[:binary_map][executable].nil?)
       executable=config[:binary_map][executable]
     end
     executable
