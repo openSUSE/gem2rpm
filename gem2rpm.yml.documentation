@@ -28,6 +28,8 @@
 # :sources:
 # - foo.desktop
 # - bar.desktop
+# :binary_map:
+#   annotate: annotate-rb
 # :gem_install_args: '....'
 # ## used by gem2rpm
 # :pre_install: |-
