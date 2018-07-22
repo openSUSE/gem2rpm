@@ -82,6 +82,10 @@ if template_file.nil?
     f.close
     f = nil
   end
+  if template_file.eql? '"opensuse-tumbleweed"'
+    $stderr.puts 'Using template opensuse on Tumbleweed'
+    template_file = 'opensuse'
+  end
 end
 if template_file.nil?
   template = Gem2Rpm::TEMPLATE
