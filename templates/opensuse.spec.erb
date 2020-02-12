@@ -38,7 +38,6 @@ Release:        0
 <%= config[:preamble] %>
 # /MANUAL
 <% end -%>
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  ruby-macros >= 5
 <% for req in spec.required_ruby_version -%>
 <%   unless req.empty? -%>
@@ -92,7 +91,6 @@ Patch<%= i %>:  <%= patch[0] %>
 <% end -%>
 Summary:        <%= config[:summary] or spec.summary %>
 License:        <%= config[:license] or (spec.licenses and spec.licenses.join(" and ")) or 'CHECK(Ruby)' %>
-Group:          Development/Languages/Ruby
 <% unless spec.executables.empty? -%>
 PreReq:         update-alternatives
 <% end -%>
