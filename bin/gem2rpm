@@ -74,7 +74,7 @@ rest = opts.permute(ARGV)
 
 template = nil
 if template_file.nil?
-  f = open("/etc/os-release", "r") if File.exists?("/etc/os-release")
+  f = open("/etc/os-release", "r") if File.exist?("/etc/os-release")
   if f
     f.read.split('\n').each do |line|
       line.match(%r{^ID=(.*)$}) { |m| template_file=m[1] }
@@ -91,7 +91,7 @@ if template_file.nil?
   template = Gem2Rpm::TEMPLATE
 else
   begin
-      f = open(template_file, "r") if File.exists?(template_file)
+      f = open(template_file, "r") if File.exist?(template_file)
       f = open(File.join(Gem2Rpm.template_dir, template_file + '.spec.erb'), "r") unless f
   rescue Errno::ENOENT
       $stderr.puts "Could not open template #{template_file}. Aborting"
@@ -154,7 +154,7 @@ if output_file.nil?
     Gem2Rpm::convert(gemfile, template, $stdout, nongem, local, doc_subpackage, oldlicense, config) unless deps
 else
     begin
-        if File.exists?(output_file)
+        if File.exist?(output_file)
           File.open(output_file, 'r') do |oldfile|
             oldfile.each_line do |line|
               m = line.match(%r{^License:\s*(\w.*)$})

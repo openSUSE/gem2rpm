@@ -39,7 +39,7 @@
   end
 
   def self.filecontent_or_value(path)
-    (path and File.exists?(path)) ? File.read(path) : path
+    (path and File.exist?(path)) ? File.read(path) : path
   end
 
   def self.parse_custom_pkgs(env_value)
