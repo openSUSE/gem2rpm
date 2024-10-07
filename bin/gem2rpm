@@ -83,8 +83,8 @@ if template_file.nil?
     f.close
     f = nil
   end
-  if template_file.eql? '"opensuse-tumbleweed"'
-    $stderr.puts 'Using template opensuse on Tumbleweed'
+  if template_file.match? '^"opensuse'
+    $stderr.puts 'Using template opensuse on openSUSE variant'
     template_file = 'opensuse'
   end
 end
