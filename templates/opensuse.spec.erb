@@ -70,7 +70,7 @@ BuildRequires:  %{rubygem rdoc > 3.10}
 BuildRequires:  update-alternatives
 <% end -%>
 <% unless spec.homepage.nil? || spec.homepage.empty? -%>
-Url:            <%= spec.homepage %>
+URL:            <%= spec.homepage %>
 <% end -%>
 <% if config[:sourceurl] -%>
 Source:         <%= config[:sourceurl] %>
@@ -85,7 +85,7 @@ Source<%= i+1 %>:        <%= src %>
 <% if config[:patches] -%>
 # MANUAL
 <%   config[:patches].each_with_index do |patch,i| -%>
-Patch<%= i %>:  <%= patch[0] %>
+Patch<%= i %>:         <%= patch[0] %>
 <%  end -%>
 # /MANUAL
 <% end -%>
