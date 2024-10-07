@@ -103,7 +103,8 @@
 Summary:        <%= config[:summary] or spec.summary %>
 Group:          Development/Languages/Ruby
 <% unless spec.executables.empty? -%>
-PreReq:         update-alternatives
+Requires(preun): update-alternatives
+Requires(post): update-alternatives
 <% end -%>
 
 %description -n <%= pkg_basename %><%= config[:version_suffix] %>

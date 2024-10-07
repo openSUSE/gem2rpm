@@ -91,9 +91,6 @@ Patch<%= i %>:         <%= patch[0] %>
 <% end -%>
 Summary:        <%= config[:summary] or spec.summary %>
 License:        <%= config[:license] or (spec.licenses and spec.licenses.join(" and ")) or 'CHECK(Ruby)' %>
-<% unless spec.executables.empty? -%>
-PreReq:         update-alternatives
-<% end -%>
 
 %description
 <%= config[:description] or spec.description -%>
