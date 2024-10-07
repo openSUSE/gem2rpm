@@ -8,6 +8,8 @@
 #   it can be multiline
 # ## used by gem2rpm
 # :license: MIT or Ruby
+# :additional_copyrights:
+#   - 2006-2024 darix was here
 # ## used by gem2rpm and gem_packages
 # :version_suffix: '-x.y'
 # ## used by gem2rpm and gem_packages

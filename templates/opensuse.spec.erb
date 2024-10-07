@@ -2,6 +2,11 @@
 # spec file for package rubygem-<%= spec.name %><%= config[:version_suffix] %>
 #
 # Copyright (c) <%= Time.now.year %> SUSE LLC
+<% if config[:additional_copyrights] -%>
+<% for copyright in config[:additional_copyrights] -%>
+# Copyright (c) <%= copyright %>
+<% end -%>
+<% end -%>
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
