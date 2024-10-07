@@ -49,7 +49,7 @@ module Gem2Rpm
         $stderr.puts e.inspect
       end
     end
-    template = ERB.new(template, 0, '-')
+    template = ERB.new(template, trim_mode: '-')
     out.puts template.result(binding)
   rescue Gem::Exception => e
     puts e
