@@ -50,7 +50,7 @@ module Gem2Rpm
       end
     end
     erb_instance = if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6')
-      ERB.new(str=template, trim_mode='-')
+      ERB.new(str=template, trim_mode: '-')
     else
       ERB.new(str=template, safe_mode=0, trim_mode='-')
     end
