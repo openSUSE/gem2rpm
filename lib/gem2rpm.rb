@@ -49,8 +49,12 @@ module Gem2Rpm
         $stderr.puts e.inspect
       end
     end
-    template = ERB.new(template, trim_mode: '-')
-    out.puts template.result(binding)
+    erb_instance = if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6')
+      ERB.new(str=template, trim_mode='-')
+    else
+      ERB.new(str=template, safe_mode=0, trim_mode='-')
+    end
+    out.puts erb_instance.result(binding)
   rescue Gem::Exception => e
     puts e
   end
