@@ -243,11 +243,11 @@ fi
 
 %files -n <%= pkg_basename %><%= config[:version_suffix] %>
 %defattr(-,root,root,-)
-# MANUAL
 <% if config[:main] && config[:main][:filelist] -%>
+# MANUAL
 <%= config[:main][:filelist] %>
-<% end -%>
 # /MANUAL
+<% end -%>
 <% unless docdirfiles.empty? -%>
 %doc <%= docdir %>/<%= pkg_basename %><%= config[:version_suffix] %>
 <% end -%>
