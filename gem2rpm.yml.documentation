@@ -21,6 +21,11 @@
 #   BuildRequires: foobar
 #   Requires: foobar
 # ## used by gem2rpm
+# ## adds runtime deps of the gem as buildrequires to check if the package is installable
+# ## only use this with leaf packages, if you enable it for everything it will slow down building
+# ## as not as many packages can be be build in parallel
+# :runtime_deps_as_buildrequires: true
+# ## used by gem2rpm
 # :patches:
 #   foo.patch: -p1
 #   bar.patch:
