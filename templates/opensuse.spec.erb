@@ -60,7 +60,7 @@ BuildRequires:  %{rubydevel}
 <%   end -%>
 <% end -%>
 <% for d in spec.runtime_dependencies -%>
-<% if ['rdoc'].include? d.name.to_s -%>
+<% if ['rdoc'].include?(d.name.to_s) or config[:runtime_deps_as_buildrequires] -%>
 # <%= d.name %> <%= d.__getobj__().requirement %>
 <% for req in d.requirement -%>
 BuildRequires:  %{rubygem <%= d.name %>  <%= req  %>}
