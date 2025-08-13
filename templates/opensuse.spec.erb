@@ -184,6 +184,7 @@ find -type f -print0 | xargs -0 touch -r %{S:0}
 # /MANUAL
 
 <% end -%>
+find %{buildroot} -name .gitignore -print -delete
 
 <% if config[:testsuite_command] -%>
 # MANUAL
