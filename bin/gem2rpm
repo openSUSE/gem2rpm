@@ -82,7 +82,7 @@ if template_file.nil?
     f.close
     f = nil
   end
-  if template_file.match? '^"opensuse'
+  if template_file.match? '^"(opensuse|sles)'
     $stderr.puts 'Using template opensuse on openSUSE variant'
     template_file = 'opensuse'
   end
