@@ -165,9 +165,7 @@ find -type f -print0 | xargs -0 touch -r %{S:0}
 <% if config[:gem_install_args] -%>
 <%= config[:gem_install_args] %> \
 <% end -%>
-<% if config[:disable_docs] -%>
   --no-rdoc --no-ri \
-<% end -%>
 <% unless spec.executables.empty? -%>
   --symlink-binaries \
 <% end -%>

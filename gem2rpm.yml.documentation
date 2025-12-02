@@ -13,6 +13,7 @@
 # ## used by gem2rpm and gem_packages
 # :version_suffix: '-x.y'
 # ## used by gem2rpm and gem_packages
+# ## deprecated as it was relying on has_rdoc? which is now deprecated
 # :disable_docs: true
 # ## used by gem2rpm
 # :disable_automatic_rdoc_dep: true
