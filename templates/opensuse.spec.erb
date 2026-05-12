@@ -1,7 +1,7 @@
 #
 # spec file for package rubygem-<%= spec.name %><%= config[:version_suffix] %>
 #
-# Copyright (c) <%= Time.now.year %> SUSE LLC
+# Copyright (c) <%= Time.now.year %> SUSE LLC and contributors
 <% if config[:additional_copyrights] -%>
 <% for copyright in config[:additional_copyrights] -%>
 # Copyright (c) <%= copyright %>
@@ -43,7 +43,6 @@ Release:        0
 <%= config[:preamble] %>
 # /MANUAL
 <% end -%>
-BuildRequires:  ruby-macros >= 5
 <% for req in spec.required_ruby_version -%>
 <%   unless req.empty? -%>
 <%     if spec.extensions.empty? -%>
@@ -68,6 +67,7 @@ BuildRequires:  %{rubygem <%= d.name %>  <%= req  %>}
 <% end -%>
 <% end -%>
 BuildRequires:  %{rubygem gem2rpm}
+BuildRequires:  ruby-macros >= 5
 <% unless spec.rdoc_options.empty? || config[:disable_automatic_rdoc_dep] -%>
 BuildRequires:  %{rubygem rdoc > 3.10}
 <% end -%>
